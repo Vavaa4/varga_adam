@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Unit teszt feladat</title>
+	<script type="text/javascript">
+		//<!-- Ide jön  a feladat megoldása... -->
+		function kivalogatParosOtven(tomb) {
+			if (!Array.isArray(tomb)) {
+				throw new Error("A bemeneti parameter nem tomb");
+			} else {
+
+				var ParosOtven = [];
+
+				for (var i = 0; i < tomb.length; i++) {
+					if (tomb[i] % 2 === 0 && tomb[i] > 50) {
+						ParosOtven.push(tomb[i]);
+					}
+				}
+
+				return ParosOtven;
+
+			}
+		}
+		console.log(kivalogatParosOtven([10, 20, 3, 5, 100, 50, 60, 53]));
+
+		function aBetukSzamaDiv() {
+			var elsoDiv = document.querySelector("div").textContent;
+
+			var szamlalo = 0;
+			for (var i = 0; i < elsoDiv.length; i++) {
+				if (elsoDiv[i] === "a") {
+					szamlalo++;
+				}
+			}
+			return szamlalo;
+		}
+
+		function osszeadasFeliras(keresettOsztaly, elsoOperandus, masodikOperandus){
+			var eredmeny = document.getElementsByClassName(keresettOsztaly)[0];
+			var x = Number(elsoOperandus);
+			var y = Number(masodikOperandus);
+			var osszeg = x + y;
+
+			var p = document.createElement("p");
+			var pSzoveg = document.createTextNode(`${x} + ${y} = ${osszeg}`);
+
+			p.appendChild(pSzoveg);
+
+			eredmeny.appendChild(p);
+		}
+		
+
+		//<!-- Idáig -->
+	</script>
+	<script src="testBaseUnit.js"></script>
+</head>
+
+<body>
+	<div></div>
+	<hr>
+	<div id="testResult">
+		<h2>Tesztek</h2>
+	</div>
+</body>
+
+</html>
